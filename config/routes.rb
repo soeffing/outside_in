@@ -9,7 +9,7 @@ OutsideIn::Application.routes.draw do
   root 'users#home'
 
   get 'users/sign_in' => 'users#sign_in', as: :sign_in
-
+  resources :profiles, only: :new
 
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
