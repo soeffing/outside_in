@@ -20,6 +20,11 @@
   		  <li>
   			  <%= link_to "Home", root_path  %>
   		  </li>
+        <% if current_user.profile.nil?  %>
+          <li>
+            <%= link_to "Create Profile", new_profile_path  %>
+          </li>
+        <% end %>
   		<% end %>
   	 <% if user_signed_in? %>
   	   <li>
@@ -30,7 +35,7 @@
   	</ul>
 
   </header>
-  
+
   <%= yield %>
 
 </body>
